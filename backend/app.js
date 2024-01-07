@@ -140,7 +140,7 @@ app.delete('/users/:id', hasRole([ROLES.ADMIN]), async (req, res) => {
 })
 
 mongoose.connect(
-    process.env.DB_CONNECTION_STRING
+    process.env.DB_CONNECTION_STRING, , { useNewUrlParser: true, useUnifiedTopology: true }
 ).then(() => {
     app.listen(port, () => {
         console.log(`Server started on port ${port}`)
